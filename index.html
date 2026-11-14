@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Rebel Hill Lodge | A lodge for twelve on the Grand Ridge Road, Hallston</title>
+<meta name="description" content="Six bedrooms, three bathrooms, a shed with its own bar and a fire pit, on two acres in the Strzelecki foothills. A website idea made by Lamplit Studio for Rebel Hill Lodge.">
+<meta property="og:title" content="Rebel Hill Lodge">
+<meta property="og:description" content="A website idea made by Lamplit Studio for Rebel Hill Lodge. Not their official site.">
+<meta property="og:image" content="https://sparshsainied-prog.github.io/rebelhilllodge/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://sparshsainied-prog.github.io/rebelhilllodge/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%236b3520'/%3E%3Cpath d='M4 23 L11 13 L13 15 L17 8 L22 15 L24 13 L28 23 Z' fill='%23f2eee6'/%3E%3C/svg%3E">
+<link rel="preload" as="image" href="img/day-2000.jpg" media="(min-width: 700px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/day-p.jpg" media="(max-width: 699px)" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Libre+Franklin:wght@400;500;600&display=swap">
+<style>
+/* Everything here comes off the lodge's own driveway sign and its photos:
+   the rusted steel plate, the weathered grey timber arm it hangs from, the paddocks,
+   the blue of the hills at dusk and the fire pit's glow.
+   Cormorant Garamond is the nearest Google face to the sign's light, wide-set capitals;
+   Libre Franklin is plain, sturdy reading type, like a hand-painted shed sign. */
+:root{
+  --rust:#6b3520;        /* the sign plate */
+  --rust-deep:#4b2415;
+  --rust-soft:#8a4a2f;
+  --timber:#8c8880;      /* the weathered arm and post */
+  --timber-pale:#dcd9d2;
+  --ground:#ecebe7;      /* the cut lettering on the plate, sun-bleached timber grey; kept cool so it isn't cream */
+  --paddock:#4e6a3b;
+  --ember:#e88a3c;       /* firelight */
+  --ink:#231a15;
+  --ink-soft:#5a4d45;
+  --line:#d3cec6;
+  --display:"Cormorant Garamond","Iowan Old Style","Palatino",Georgia,serif;
+  --text:"Libre Franklin","Franklin Gothic Book","Helvetica Neue",Arial,sans-serif;
+  --gut:max(20px, env(safe-area-inset-left, 0px));
+  --gut-r:max(20px, env(safe-area-inset-right, 0px));
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--text);font-size:17px;line-height:1.6}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--rust)}
+:focus-visible{outline:3px solid var(--rust);outline-offset:3px}
+.stage :focus-visible,.top :focus-visible,.shed :focus-visible,.close :focus-visible,footer :focus-visible{outline-color:var(--ember)}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.05;margin:0;text-wrap:balance}
+p{margin:0;text-wrap:pretty}
+.skip{position:absolute;left:-9999px;top:0}
+.skip:focus{left:12px;top:12px;z-index:60;background:var(--ground);padding:8px 12px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* The disclaimer strip, first thing anyone reads */
+.strip{background:var(--ink);color:var(--ground);font-size:14px;text-align:center;line-height:1.4;
+  padding:8px var(--gut-r) 8px var(--gut);padding-top:calc(8px + env(safe-area-inset-top,0px))}
+
+/* Header over the hero */
+.top{position:absolute;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;gap:16px;
+  padding:16px var(--gut-r) 0 var(--gut)}
+.mark{display:grid;justify-items:center;text-decoration:none;color:var(--ground);line-height:1;text-shadow:0 1px 10px rgba(20,14,10,.55)}
+.mark .peaks{width:44px;height:18px;margin-bottom:4px;color:var(--ground);filter:drop-shadow(0 1px 6px rgba(20,14,10,.5))}
+.mark .a{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.24em;padding-left:.24em}
+.mark .b{font-family:var(--text);font-weight:500;font-size:10px;letter-spacing:.42em;padding-left:.42em;margin-top:5px}
+.top nav{display:flex;gap:22px;align-items:center;font-size:15px}
+.top nav a{color:var(--ground);text-decoration:none;text-shadow:0 1px 8px rgba(20,14,10,.6)}
+.top nav a:hover{text-decoration:underline;text-underline-offset:4px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 20px;border-radius:2px;
+  font-family:var(--text);font-weight:600;font-size:16px;text-decoration:none;border:0;cursor:pointer;
+  background:var(--rust);color:var(--ground)}
+.btn:hover{background:var(--rust-deep)}
+.btn.line{background:transparent;color:var(--rust);box-shadow:inset 0 0 0 1.5px var(--rust)}
+.btn.line:hover{background:rgba(107,53,32,.07)}
+.top .btn{background:var(--ground);color:var(--rust);text-shadow:none}
+.top .btn:hover{background:#fff}
+.top .btn,.mark .a{white-space:nowrap}
+@media (max-width:860px){.top nav a:not(.btn){display:none}}
+@media (max-width:360px){.mark .a{font-size:19px;letter-spacing:.18em}.top .btn{padding:0 14px;font-size:15px}}
+
+/* ---------- Past the sign: the sign swings as you go by it, and the afternoon turns to dusk ---------- */
+.arrive{position:relative;height:320vh}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:var(--ink)}
+.plate{position:absolute;inset:-2%;will-change:transform}
+.plate img{width:100%;height:100%;object-fit:cover}
+.plate.day img{object-position:50% 62%}
+.plate.day{will-change:transform,opacity}
+.plate.dusk img{object-position:62% 60%}
+.glow{position:absolute;inset:0;opacity:0;pointer-events:none;will-change:opacity;
+  background:radial-gradient(60% 45% at 30% 88%, rgba(232,138,60,.38), rgba(232,138,60,0) 70%)}
+.shade{position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(to bottom, rgba(20,16,12,.34) 0%, rgba(20,16,12,0) 34%, rgba(20,16,12,0) 58%, rgba(20,16,12,.42) 100%)}
+/* the sign assembly: timber arm, two chains, the plate */
+.sign{position:absolute;left:0;right:0;top:0;height:100%;z-index:4;pointer-events:none;transform-origin:50% 0;will-change:transform}
+.arm{position:absolute;top:clamp(76px,12vh,120px);left:12%;width:max(1100px,106%);filter:drop-shadow(0 10px 14px rgba(15,10,8,.35))}
+.hang{position:absolute;left:13%;width:min(42vw,580px);top:calc(clamp(76px,12vh,120px) + min(7.6vw,92px));
+  transform-origin:50% 0;will-change:transform}
+.chain{position:absolute;top:0;width:16px;height:clamp(30px,5.4vh,52px)}
+.chain.l{left:11%}.chain.r{right:11%}
+.chain svg{width:100%;height:100%;display:block}
+.hang .steel{position:absolute;left:0;right:0;top:clamp(26px,5vh,48px);box-shadow:0 22px 36px -14px rgba(15,8,4,.6)}
+.hang .steel img{width:100%;height:auto}
+.copy-a{position:absolute;z-index:6;right:var(--gut-r);bottom:clamp(28px,8vh,80px);width:min(520px, calc(100% - 40px));
+  background:rgba(31,26,22,.8);color:var(--ground);padding:clamp(20px,2.4vw,30px);border-radius:2px;will-change:transform,opacity}
+.copy-a .where{font-size:14px;letter-spacing:.02em;opacity:.9}
+.copy-a h1{font-size:clamp(34px,4.2vw,56px);font-weight:600;margin-top:8px}
+.copy-a p.l{font-size:17px;margin-top:12px}
+.copy-a .act{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.copy-a .btn{background:var(--ground);color:var(--rust)}
+.copy-a .btn.line{background:transparent;color:var(--ground);box-shadow:inset 0 0 0 1.5px rgba(244,243,240,.8)}
+.copy-b{pointer-events:none;position:absolute;z-index:6;left:var(--gut);bottom:clamp(28px,9vh,90px);width:min(560px, calc(100% - 40px));opacity:0;color:var(--ground);will-change:transform,opacity}
+.copy-b .panel{background:rgba(35,26,21,.8);padding:clamp(20px,2.4vw,30px);border-radius:2px}
+.copy-b h2{font-size:clamp(32px,3.8vw,50px)}
+.copy-b p{margin-top:10px}
+@media (max-width:699px){
+  .arrive{height:250vh}
+  .copy-a .where{display:none}
+  .arm{left:4%;width:880px;top:84px}
+  .hang{left:7vw;width:86vw;top:calc(84px + 52px)}
+  .copy-a{left:var(--gut);right:var(--gut-r);width:auto;bottom:calc(64px + env(safe-area-inset-bottom,0px))}
+  .copy-a h1{font-size:clamp(30px,8.6vw,40px)}
+  .copy-a p.l{font-size:15px;margin-top:8px}
+  .copy-a{padding:18px}
+  .copy-a .act{display:none}
+  .copy-b{right:var(--gut-r);width:auto;bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+}
+@media (max-height:620px) and (min-width:700px){.copy-a p.l{display:none}.hang{width:min(34vw,460px)}}
+
+/* ---------- Sections ---------- */
+.wrap{padding-left:var(--gut);padding-right:var(--gut-r)}
+.inner{max-width:1200px;margin:0 auto}
+section{scroll-margin-top:16px}
+.lede{font-size:clamp(18px,1.5vw,20px);max-width:36em}
+.quote{font-family:var(--display);font-style:italic;font-weight:500;font-size:clamp(22px,2vw,27px);line-height:1.35}
+.who{font-size:14px;color:var(--ink-soft);margin-top:8px}
+.cap{font-size:14px;color:var(--ink-soft);margin-top:8px}
+h2.big{font-size:clamp(44px,5.6vw,76px)}
+
+/* The lodge */
+.lodge{padding-block:clamp(72px,10vw,140px) clamp(40px,6vw,80px)}
+.lodge .inner{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,5vw,80px)}
+.lodge .lede{margin-top:20px}
+.plan{margin:34px 0 0}
+.plan img{width:100%;border:1px solid var(--line);background:#fff}
+dl.facts{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:24px;font-size:17px;line-height:1.5}
+dl.facts dt{font-family:var(--display);font-weight:600;font-size:21px;line-height:1.2;padding:14px 0;border-top:1px solid var(--line);white-space:nowrap}
+dl.facts dd{margin:0;padding:15px 0;border-top:1px solid var(--line)}
+@media (max-width:860px){.lodge .inner{grid-template-columns:minmax(0,1fr)}.plan{order:3}}
+.rooms{padding-bottom:clamp(64px,8vw,120px)}
+.rooms ul{list-style:none;margin:0 auto;padding:0;max-width:1200px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px}
+.rooms li{grid-column:span 4}
+.rooms li.wide{grid-column:span 6}
+.rooms li.hero-room{grid-column:span 8}
+.rooms li.tall{grid-column:span 4}
+.rooms li.tall img{aspect-ratio:3/4;object-position:50% 60%}
+.rooms figure{margin:0}
+.rooms img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:2px;background:var(--timber-pale)}
+.rooms figcaption{font-size:15px;margin-top:8px}
+.rooms figcaption b{font-family:var(--display);font-weight:600;font-size:20px;margin-right:6px}
+@media (max-width:860px){
+  .rooms ul{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding:0 var(--gut-r) 6px var(--gut);margin:0 calc(-1 * var(--gut-r)) 0 calc(-1 * var(--gut));scrollbar-width:none}
+  .rooms ul::-webkit-scrollbar{display:none}
+  .rooms li,.rooms li.wide,.rooms li.hero-room,.rooms li.tall{flex:0 0 78vw;scroll-snap-align:start}
+  .rooms li.tall img{aspect-ratio:3/2}
+}
+.swipe{display:none;font-size:14px;color:var(--ink-soft);margin:0 0 12px}
+@media (max-width:860px){.swipe{display:block}}
+
+/* The shed: its two timber doors part on the bar */
+.shed{background:var(--ink);color:var(--ground);padding-block:clamp(72px,10vw,140px)}
+.shed .inner{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,5vw,72px);align-items:center}
+.shed a{color:var(--ground)}
+.doors{position:relative;aspect-ratio:3/2;overflow:hidden;border-radius:2px;background:#120d0a}
+.doors > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.leaf{position:absolute;top:0;bottom:0;width:50%;overflow:hidden;will-change:transform}
+.leaf.l{left:0;box-shadow:6px 0 18px rgba(0,0,0,.45)}
+.leaf.r{right:0;box-shadow:-6px 0 18px rgba(0,0,0,.45)}
+.leaf img{position:absolute;top:0;height:100%;width:200%;max-width:none;object-fit:cover}
+.leaf.l img{left:0}.leaf.r img{right:0}
+.shed-more{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:14px}
+.shed-more img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:2px}
+.shed h2{font-size:clamp(44px,5.6vw,76px)}
+.shed .lede{margin-top:18px}
+.shed blockquote{margin:28px 0 0;padding:0}
+.shed .who{color:#c9beb4}
+@media (max-width:860px){.shed .inner{grid-template-columns:minmax(0,1fr)}}
+
+.band{margin:0;background:var(--ink)}
+.band img{width:100%;aspect-ratio:21/9;object-fit:cover}
+.band figcaption{color:#cfc5bb;font-size:14px;padding-top:10px;padding-bottom:12px}
+@media (max-width:699px){.band img{aspect-ratio:4/3}}
+/* Out on the Grand Ridge Road */
+.around{padding-block:clamp(72px,10vw,140px)}
+.around .inner{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:clamp(28px,5vw,72px);align-items:start}
+table.dist{width:100%;border-collapse:collapse;margin-top:24px;font-size:17px}
+table.dist td{padding:13px 0;border-top:1px solid var(--line);vertical-align:top}
+table.dist td:last-child{text-align:right;white-space:nowrap;padding-left:16px;font-variant-numeric:tabular-nums;color:var(--ink-soft)}
+.around .addr{margin-top:20px;font-size:16px}
+.around figure{margin:0}
+.around figure img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:2px}
+.around blockquote{margin:18px 0 0}
+.wave{margin-top:26px;background:var(--timber-pale);padding:16px 18px;border-radius:2px;font-size:16px}
+@media (max-width:860px){.around .inner{grid-template-columns:minmax(0,1fr)}}
+
+/* Guests */
+.guests{background:var(--timber-pale);padding-block:clamp(72px,10vw,130px)}
+.g-top{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,5vw,64px);align-items:end}
+.g-photo{margin:0}
+.g-photo img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:2px}
+@media (max-width:860px){.g-top{grid-template-columns:minmax(0,1fr)}}
+.score{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap}
+.score b{font-family:var(--display);font-size:clamp(76px,10vw,132px);font-weight:600;line-height:.85;font-variant-numeric:tabular-nums;color:var(--rust)}
+.score span{font-size:18px;max-width:22em}
+.quotes{margin-top:clamp(36px,5vw,60px);display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,5vw,64px)}
+.quotes .lead .quote{font-size:clamp(28px,3.2vw,42px);line-height:1.2}
+.quotes ul{list-style:none;margin:0;padding:0;display:grid;gap:22px}
+.quotes li{border-top:1px solid #c8c2b8;padding-top:16px}
+.quotes li .quote{font-size:21px}
+@media (max-width:860px){.quotes{grid-template-columns:minmax(0,1fr)}}
+
+/* Book */
+.book{padding-block:clamp(72px,10vw,130px)}
+.book .inner{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(28px,5vw,72px);align-items:start}
+.book .lede{margin-top:18px}
+.book .act{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.book ul{margin:0;padding:0;list-style:none;font-size:16px}
+.book ul li{padding:12px 0;border-top:1px solid var(--line)}
+.book ul li b{font-weight:600}
+.book .sheet{margin:0}
+.book .sheet img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:2px}
+@media (max-width:860px){.book .inner{grid-template-columns:minmax(0,1fr)}}
+
+/* The close: the lodge at night, and the sign once more */
+.close{position:relative;color:var(--ground);background:var(--ink);overflow:hidden}
+.close > img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;object-position:50% 60%}
+.close .veil{position:absolute;inset:0;background:linear-gradient(to bottom, rgba(16,20,32,.15), rgba(16,20,32,.55))}
+.close .body{position:relative;min-height:min(86vh,760px);display:grid;place-items:center;text-align:center;padding:clamp(72px,10vw,120px) var(--gut-r) clamp(72px,10vw,120px) var(--gut)}
+.board{background:var(--rust);border:1px solid rgba(244,243,240,.35);outline:1px solid var(--rust);padding:clamp(28px,5vw,48px) clamp(26px,6vw,64px);box-shadow:0 28px 50px -20px rgba(0,0,0,.7);max-width:640px}
+.board .inside{border:1px solid rgba(244,243,240,.55);padding:clamp(18px,3vw,28px) clamp(16px,3vw,30px)}
+.board .peaks.big{width:96px;height:39px;color:var(--ground);display:block;margin:0 auto 14px}
+.board .peaks.big path+path{stroke:var(--rust)}
+.board .n{font-family:var(--display);font-weight:600;font-size:clamp(30px,6.6vw,58px);letter-spacing:.2em;padding-left:.2em;line-height:1}
+.board .s{font-size:clamp(11px,1.6vw,13px);letter-spacing:.42em;padding-left:.42em;margin-top:10px}
+.board p{margin-top:16px;font-size:16px}
+.board .act{margin-top:22px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.board .btn{background:var(--ground);color:var(--rust)}
+.board .btn.line{background:transparent;color:var(--ground);box-shadow:inset 0 0 0 1.5px rgba(244,243,240,.85)}
+
+footer{background:var(--ink);color:#d5ccc4;font-size:14px;padding-block:26px calc(26px + env(safe-area-inset-bottom,0px))}
+footer a{color:#fff}
+footer .inner{display:grid;gap:6px}
+@media (max-width:860px){footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}}
+
+/* Phones: a booking bar in thumb reach */
+.thumbbar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:none;gap:10px;
+  padding:10px var(--gut-r) calc(10px + env(safe-area-inset-bottom,0px)) var(--gut);
+  background:rgba(244,243,240,.97);border-top:1px solid var(--line);transform:translateY(110%);visibility:hidden;transition:transform .25s ease-out,visibility 0s .25s}
+.thumbbar.on{transform:none;visibility:visible;transition:transform .25s ease-out}
+.thumbbar .btn{flex:1;min-height:50px}
+.thumbbar .btn.line{flex:0 0 auto;padding:0 18px}
+@media (max-width:860px){.thumbbar{display:flex}}
+
+@media (prefers-reduced-motion: reduce){
+  .arrive{height:auto}
+  .stage{position:relative;height:auto;overflow:visible;display:flex;flex-direction:column;background:var(--ground)}
+  .plate{position:relative;inset:auto;transform:none !important;opacity:1 !important}
+  .plate img{height:auto;aspect-ratio:3/2}
+  .plate.day{order:1;height:min(100svh,880px)}
+  .plate.day img{height:100%;aspect-ratio:auto}
+  .plate.dusk{order:3}
+  .shade{height:min(100svh,880px)}
+  .glow{display:none}
+  .sign{transform:none !important;opacity:1 !important;overflow:hidden;height:min(100svh,880px)}
+  .hang{transform:none !important}
+  .copy-a{order:2;position:relative;right:auto;bottom:auto;left:auto;width:auto;border-radius:0;background:var(--ink);transform:none !important;opacity:1 !important}
+  .copy-a .act{display:flex}
+  .copy-b{order:4;position:relative;opacity:1 !important;transform:none !important;left:auto;bottom:auto;width:auto;padding:0}
+  .copy-b{width:100% !important;max-width:none;right:auto !important;left:auto !important}
+  .copy-b .panel{border-radius:0;background:var(--ink);padding:22px var(--gut-r) 28px var(--gut)}
+  .leaf{transform:none !important;display:none}
+  .thumbbar,.thumbbar.on{transition:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#book">Skip to booking</a>
+<p class="strip">A website idea made by Lamplit Studio for Rebel Hill Lodge. Not their official site.</p>
+
+<header class="top">
+  <a class="mark" href="#arrive" aria-label="Rebel Hill Lodge, back to top"><svg class="peaks" viewBox="0 0 64 26" aria-hidden="true"><path d="M2 25 L13 16 L15.5 18 L18 15 L25 21 L35 3 L40 10 L43 7 L62 25 Z" fill="currentColor"/><path d="M35 3 L33 9 L36 7.5 L34.5 13 L38 9.5 M43 7 L42 11 L44.5 10" fill="none" stroke="#6b3520" stroke-width="1.2"/></svg><span class="a">REBEL HILL</span><span class="b">LODGE</span></a>
+  <nav aria-label="Main">
+    <a href="#lodge">The lodge</a>
+    <a href="#shed">The shed</a>
+    <a href="#around">Around</a>
+    <a href="#guests">Guests</a>
+    <a class="btn" href="https://www.airbnb.com.au/rooms/1392339588432512335" rel="noopener">Check dates</a>
+  </nav>
+</header>
+
+<main>
+<section class="arrive" id="arrive" aria-label="Arriving at Rebel Hill Lodge">
+  <div class="stage">
+    <div class="plate dusk" aria-hidden="true">
+      <picture>
+        <source media="(min-width:700px)" srcset="img/dusk-2000.jpg">
+        <img src="img/dusk-p.jpg" alt="" width="900" height="1600">
+      </picture>
+    </div>
+    <div class="plate day">
+      <picture>
+        <source media="(min-width:700px)" srcset="img/day-2000.jpg">
+        <img src="img/day-p.jpg" alt="The fire pit ringed with log seats, looking out over bush and farmland in the afternoon" width="900" height="1600" fetchpriority="high">
+      </picture>
+    </div>
+    <div class="glow" aria-hidden="true"></div>
+    <div class="shade" aria-hidden="true"></div>
+    <div class="sign" id="sign">
+      <img class="arm" src="img/arm.webp" alt="" width="1400" height="220" aria-hidden="true">
+      <div class="hang" id="hang">
+        <span class="chain l" aria-hidden="true"><svg viewBox="0 0 16 52" preserveAspectRatio="none"><g fill="none" stroke="#5a2c18" stroke-width="3.2"><ellipse cx="8" cy="9" rx="4.6" ry="8"/><ellipse cx="8" cy="26" rx="3" ry="8" stroke="#7a3d22"/><ellipse cx="8" cy="43" rx="4.6" ry="8"/></g></svg></span>
+        <span class="chain r" aria-hidden="true"><svg viewBox="0 0 16 52" preserveAspectRatio="none"><g fill="none" stroke="#5a2c18" stroke-width="3.2"><ellipse cx="8" cy="9" rx="4.6" ry="8"/><ellipse cx="8" cy="26" rx="3" ry="8" stroke="#7a3d22"/><ellipse cx="8" cy="43" rx="4.6" ry="8"/></g></svg></span>
+        <div class="steel"><img src="img/plate.jpg" srcset="img/plate-760.jpg 760w, img/plate.jpg 1142w" sizes="(max-width:699px) 86vw, 46vw" alt="The rusted steel sign at the driveway: Rebel Hill Lodge, under a cut-out of mountain peaks" width="1142" height="535"></div>
+      </div>
+    </div>
+    <div class="copy-a" id="copyA">
+      <p class="where">2790 Grand Ridge Road, Hallston, South Gippsland</p>
+      <h1><span class="sr">Rebel Hill Lodge. </span>Room for all twelve of you on the Grand Ridge Road.</h1>
+      <p class="l">Six bedrooms, three bathrooms and a shed with its own bar, on two acres of your own in the foothills of the Strzelecki Ranges.</p>
+      <div class="act"><a class="btn" href="https://www.airbnb.com.au/rooms/1392339588432512335" rel="noopener">Check dates</a><a class="btn line" href="#lodge">See the lodge</a></div>
+    </div>
+    <div class="copy-b" id="copyB">
+      <div class="panel">
+        <h2>Gather around the fire pit</h2>
+        <p>Bushland and farmland views all round, brilliant sunsets, and the firewood is provided.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="lodge wrap" id="lodge">
+  <div class="inner">
+    <div>
+      <h2 class="big">The lodge</h2>
+      <p class="lede">It sits at one end of Shandal and Nick's 10 acre property, with about two acres to yourselves and a privacy fence between you and their homestead. Beef, sheep and dairy farms all round.</p>
+      <figure class="plan">
+        <img src="img/plan-800.jpg" srcset="img/plan-800.jpg 800w, img/plan.jpg 1200w" sizes="(max-width:860px) 100vw, 40vw" alt="Floor plan of the lodge: lounge, living, kitchen and dining through the middle, six bedrooms, bathrooms and laundry, with decks front and back" width="800" height="566" loading="lazy">
+        <figcaption class="cap">The floor plan, from the lodge's listing.</figcaption>
+      </figure>
+    </div>
+    <dl class="facts">
+      <dt>Sleeps 12</dt><dd>Six bedrooms: five with a queen bed, one with two singles. Black-out blinds in every room.</dd>
+      <dt>Bathrooms</dt><dd>Three.</dd>
+      <dt>Living</dt><dd>A lounge, a living room with a wood heater, and one long dining table for everyone.</dd>
+      <dt>Kitchen</dt><dd>Oven, stove, fridge, freezer, microwave, kettle, toaster and coffee. It's self-catering.</dd>
+      <dt>Outside</dt><dd>A deck around the house, the fire pit and outdoor furniture.</dd>
+      <dt>Supplied</dt><dd>Bed linen, towels and firewood. Wi-fi and a TV. Self check-in.</dd>
+      <dt>Parking</dt><dd>Room for cars and trailers, a lockable shed for motorbikes and push bikes, and a wash bay with a pressure washer and warm water.</dd>
+    </dl>
+  </div>
+</section>
+
+<section class="rooms wrap" aria-label="Photos of the rooms">
+  <p class="swipe">Swipe for all six bedrooms.</p>
+  <ul tabindex="0" aria-label="Photos of the lodge, swipe sideways">
+    <li class="hero-room"><figure><img src="img/living-800.jpg" srcset="img/living-800.jpg 800w, img/living.jpg 1200w" sizes="(max-width:860px) 78vw, 66vw" alt="The living room: timber walls, the wood heater, and the double doors out to the deck" width="800" height="533" loading="lazy"><figcaption><b>Living room</b>with the wood heater</figcaption></figure></li>
+    <li class="tall"><figure><img src="img/kitchen-800.jpg" srcset="img/kitchen-800.jpg 800w, img/kitchen.jpg 1200w" sizes="(max-width:860px) 78vw, 33vw" alt="The kitchenette: white cupboards, oven and sink" width="800" height="1200" loading="lazy"><figcaption><b>Kitchenette</b></figcaption></figure></li>
+    <li class="wide"><figure><img src="img/lounge-800.jpg" srcset="img/lounge-800.jpg 800w, img/lounge.jpg 1200w" sizes="(max-width:860px) 78vw, 50vw" alt="The lounge: a big leather corner couch, beanbags and a rug" width="800" height="533" loading="lazy"><figcaption><b>Lounge</b></figcaption></figure></li>
+    <li class="wide"><figure><img src="img/table-800.jpg" srcset="img/table-800.jpg 800w, img/table.jpg 1200w" sizes="(max-width:860px) 78vw, 50vw" alt="The long timber dining table, with the wood heater at the far end" width="800" height="533" loading="lazy"><figcaption><b>Dining</b>with the wood heater at the end</figcaption></figure></li>
+    <li><figure><img src="img/bed1-800.jpg" srcset="img/bed1-800.jpg 800w, img/bed1.jpg 1200w" sizes="(max-width:860px) 78vw, 33vw" alt="Bedroom 1 with a queen bed" width="800" height="533" loading="lazy"><figcaption><b>Bedroom 1</b>queen</figcaption></figure></li>
+    <li><figure><img src="img/bed2-800.jpg" srcset="img/bed2-800.jpg 800w, img/bed2.jpg 1200w" sizes="(max-width:860px) 78vw, 33vw" alt="Bedroom 2 with two single beds" width="800" height="533" loading="lazy"><figcaption><b>Bedroom 2</b>two singles</figcaption></figure></li>
+    <li><figure><img src="img/bed3-800.jpg" srcset="img/bed3-800.jpg 800w, img/bed3.jpg 1200w" sizes="(max-width:860px) 78vw, 33vw" alt="Bedroom 3 with a queen bed" width="800" height="533" loading="lazy"><figcaption><b>Bedroom 3</b>queen</figcaption></figure></li>
+    <li><figure><img src="img/bed4-800.jpg" srcset="img/bed4-800.jpg 800w, img/bed4.jpg 1200w" sizes="(max-width:860px) 78vw, 33vw" alt="Bedroom 4 with a queen bed" width="800" height="533" loading="lazy"><figcaption><b>Bedroom 4</b>queen</figcaption></figure></li>
+    <li><figure><img src="img/bed5-800.jpg" srcset="img/bed5-800.jpg 800w, img/bed5.jpg 1200w" sizes="(max-width:860px) 78vw, 33vw" alt="Bedroom 5 with a queen bed" width="800" height="533" loading="lazy"><figcaption><b>Bedroom 5</b>queen</figcaption></figure></li>
+    <li><figure><img src="img/bed6-800.jpg" srcset="img/bed6-800.jpg 800w, img/bed6.jpg 1200w" sizes="(max-width:860px) 78vw, 33vw" alt="Bedroom 6 with a queen bed" width="800" height="533" loading="lazy"><figcaption><b>Bedroom 6</b>queen</figcaption></figure></li>
+    <li class="wide"><figure><img src="img/deck-800.jpg" srcset="img/deck-800.jpg 800w, img/deck.jpg 1200w" sizes="(max-width:860px) 78vw, 50vw" alt="The long covered deck, looking out over the valley" width="800" height="533" loading="lazy"><figcaption><b>The deck</b></figcaption></figure></li>
+    <li class="wide"><figure><img src="img/bath-800.jpg" srcset="img/bath-800.jpg 800w, img/bath.jpg 1200w" sizes="(max-width:860px) 78vw, 50vw" alt="One of the three bathrooms, with a shower" width="800" height="533" loading="lazy"><figcaption><b>One of three bathrooms</b></figcaption></figure></li>
+  </ul>
+</section>
+
+<section class="shed wrap" id="shed">
+  <div class="inner">
+    <figure style="margin:0">
+      <div class="doors" id="doors">
+        <img src="img/bar-big-900.jpg" srcset="img/bar-big-900.jpg 900w, img/bar-big.jpg 1800w" sizes="(max-width:860px) 100vw, 58vw" alt="The bar in the shed: a long slab timber bar top, red front, stools, and an old Carlton Draught Bistro sign on the wall" width="900" height="600" loading="lazy">
+        <div class="leaf l" aria-hidden="true"><img src="img/shedwall-900.jpg" alt="" width="900" height="600" loading="lazy"></div>
+        <div class="leaf r" aria-hidden="true"><img src="img/shedwall-900.jpg" alt="" width="900" height="600" loading="lazy"></div>
+      </div>
+      <figcaption class="cap" style="color:#c9beb4">The shed's bar.</figcaption>
+      <div class="shed-more">
+        <img src="img/shedin-800.jpg" srcset="img/shedin-800.jpg 800w, img/shedin.jpg 1200w" sizes="(max-width:860px) 50vw, 29vw" alt="Inside the big shed: concrete floor, couches, a TV and the bar at the far end" width="800" height="533" loading="lazy">
+        <img src="img/sheddoor-800.jpg" srcset="img/sheddoor-800.jpg 800w, img/sheddoor.jpg 1200w" sizes="(max-width:860px) 50vw, 29vw" alt="The lodge's rough-sawn timber wall and double timber doors, with two chairs on the deck" width="800" height="533" loading="lazy">
+      </div>
+    </figure>
+    <div>
+      <h2>The shed</h2>
+      <p class="lede">It's yours to use, free: a bar, a wood heater, seating, and a TV with wi-fi and Netflix. Good for cool evenings, and for hot summer days with your favourite people.</p>
+      <blockquote>
+        <p class="quote">"The shed is the perfect place to hang out with friends and family. It was especially great when the rain came!"</p>
+        <p class="who">Laura, on Airbnb, October 2026</p>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<figure class="band">
+  <img src="img/band-900.jpg" srcset="img/band-900.jpg 900w, img/band.jpg 2000w" sizes="100vw" alt="Sausages and steak on a hotplate over the fire pit, with the slab timber seats behind" width="900" height="386" loading="lazy">
+  <figcaption class="wrap">Dinner on the fire pit. The firewood is provided.</figcaption>
+</figure>
+
+<section class="around wrap" id="around">
+  <div class="inner">
+    <div>
+      <h2 class="big">Out on the Grand Ridge Road</h2>
+      <table class="dist">
+        <caption class="sr">How far things are from the lodge</caption>
+        <tbody>
+          <tr><td>Leongatha</td><td>15 min</td></tr>
+          <tr><td>Mirboo North</td><td>15 min</td></tr>
+          <tr><td>Mount Worth State Park, a scenic drive</td><td>13 km</td></tr>
+          <tr><td>Great Southern Rail Trail</td><td>18 min drive</td></tr>
+          <tr><td>Wilsons Promontory National Park</td><td>1 hour drive</td></tr>
+        </tbody>
+      </table>
+      <p class="addr">Farmers markets, wineries, cafes and rail trails in between.</p>
+      <p class="wave">You'll see the local farmers out in tractors, feeding cattle and carting hay and silage. Shandal and Nick ask that you give them a friendly wave.</p>
+    </div>
+    <figure>
+      <img src="img/horses-800.jpg" srcset="img/horses-800.jpg 800w, img/horses.jpg 1200w" sizes="(max-width:860px) 100vw, 48vw" alt="Three horses at a timber rail fence, with forested hills behind" width="800" height="533" loading="lazy">
+      <blockquote>
+        <p class="quote">"The children enjoyed feeding the horses and the visiting dog."</p>
+        <p class="who">Helene, eight adults, two teenagers and three children, on Airbnb, September 2026</p>
+      </blockquote>
+    </figure>
+  </div>
+</section>
+
+<section class="guests wrap" id="guests">
+  <div class="inner">
+    <div class="g-top">
+    <div class="score"><b>5.0</b><span>from all 23 guest reviews on Airbnb. Shandal is a Superhost.</span></div>
+    <figure class="g-photo"><img src="img/porch-800.jpg" srcset="img/porch-800.jpg 800w, img/porch.jpg 1200w" sizes="(max-width:860px) 100vw, 50vw" alt="A chair with a pink blanket and a small table set with a cheese board, against the lodge's rough timber wall" width="800" height="533" loading="lazy"><figcaption class="cap">On the deck.</figcaption></figure>
+    </div>
+    <div class="quotes">
+      <blockquote class="lead" style="margin:0">
+        <p class="quote">"In 15 years of using Airbnb, this is the best place we've ever stayed!"</p>
+        <p class="who">Laura, October 2026</p>
+      </blockquote>
+      <ul>
+        <li><p class="quote">"Great spot for my wife's 40th weekend with our friends. Huge house and awesome shed for the party!"</p><p class="who">Marcus, November 2026</p></li>
+        <li><p class="quote">"So peaceful and lots of space for the multiple babies in our group."</p><p class="who">Emily, October 2026</p></li>
+        <li><p class="quote">"The setting with the added vista of horses and friendly bulls was relaxing and wonderful."</p><p class="who">Gita, November 2026</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="book wrap" id="book">
+  <div class="inner">
+    <div>
+      <h2 class="big">Book the whole lodge</h2>
+      <p class="lede">One price books the lodge for up to 12 guests, and stays of more than seven days get a discount. Bookings are on Airbnb. For a longer stay or a question, ring Shandal and Nick.</p>
+      <div class="act">
+        <a class="btn" href="https://www.airbnb.com.au/rooms/1392339588432512335" rel="noopener">Check dates on Airbnb</a>
+        <a class="btn line" href="tel:+61448992154">Call 0448 992 154</a>
+      </div>
+    </div>
+    <div>
+      <figure class="sheet"><img src="img/sign-800.jpg" srcset="img/sign-800.jpg 800w, img/sign.jpg 1200w" sizes="(max-width:860px) 100vw, 45vw" alt="The Rebel Hill Lodge sign hanging from its timber post beside the Grand Ridge Road" width="800" height="533" loading="lazy"><figcaption class="cap">Turn in at this sign on the Grand Ridge Road.</figcaption></figure>
+      <ul style="margin-top:22px">
+        <li><b>Who it suits:</b> family and friends in one group, up to 12. Children are welcome.</li>
+        <li><b>Pets:</b> not allowed.</li>
+        <li><b>Riding:</b> no horse or motorbike riding on the property.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="close" aria-label="Book Rebel Hill Lodge">
+  <img src="img/moon-900.jpg" srcset="img/moon-900.jpg 900w, img/moon.jpg 1800w" sizes="100vw" alt="The lodge at night under a full moon, its windows lit along the deck" width="900" height="675" loading="lazy">
+  <div class="veil" aria-hidden="true"></div>
+  <div class="body">
+    <div class="board">
+      <div class="inside">
+        <svg class="peaks big" viewBox="0 0 64 26" aria-hidden="true"><path d="M2 25 L13 16 L15.5 18 L18 15 L25 21 L35 3 L40 10 L43 7 L62 25 Z" fill="currentColor"/><path d="M35 3 L33 9 L36 7.5 L34.5 13 L38 9.5 M43 7 L42 11 L44.5 10" fill="none" stroke="#6b3520" stroke-width="1.2"/></svg>
+        <p class="n">REBEL HILL</p>
+        <p class="s">LODGE</p>
+        <p>2790 Grand Ridge Road, Hallston</p>
+        <div class="act">
+          <a class="btn" href="https://www.airbnb.com.au/rooms/1392339588432512335" rel="noopener">Check dates</a>
+          <a class="btn line" href="tel:+61448992154">Call</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="wrap">
+  <div class="inner">
+    <p>A preview made by Lamplit Studio for Rebel Hill Lodge. Not affiliated, not live.</p>
+    <p>Photos and words are from the lodge's own Airbnb listing and its Visit Gippsland page. Instagram: <a href="https://www.instagram.com/rebelhilllodge/" rel="noopener">@rebelhilllodge</a></p>
+  </div>
+</footer>
+
+<div class="thumbbar" id="thumbbar">
+  <a class="btn" href="https://www.airbnb.com.au/rooms/1392339588432512335" rel="noopener">Check dates</a>
+  <a class="btn line" href="tel:+61448992154">Call</a>
+</div>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var arrive = document.getElementById('arrive');
+  var sign = document.getElementById('sign'), hang = document.getElementById('hang');
+  var day = arrive.querySelector('.plate.day'), dusk = arrive.querySelector('.plate.dusk');
+  var glow = arrive.querySelector('.glow');
+  var copyA = document.getElementById('copyA'), copyB = document.getElementById('copyB');
+  var doors = document.getElementById('doors');
+  var leafL = doors.querySelector('.leaf.l'), leafR = doors.querySelector('.leaf.r');
+  var bar = document.getElementById('thumbbar');
+  var book = document.getElementById('book');
+  var ticking = false;
+
+  function clamp(v){ return v < 0 ? 0 : v > 1 ? 1 : v; }
+  function band(p, a, b){ return clamp((p - a) / (b - a)); }
+  function ease(t){ return t * t * (3 - 2 * t); }
+
+  function frame(){
+    ticking = false;
+    var vh = window.innerHeight;
+    var r = arrive.getBoundingClientRect();
+    var total = arrive.offsetHeight - vh;
+    var p = clamp(-r.top / total);
+
+    if (!reduce.matches){
+      // the sign: it swings on its chains as you pass it, then goes up and past overhead
+      var pass = ease(band(p, 0.04, 0.5));
+      var swing = 8 * Math.sin(p * 17) * Math.exp(-p * 3.2) * (p < 0.55 ? 1 : 0);
+      var tilt = 10 * Math.sin(p * 17 + 0.9) * Math.exp(-p * 3.2);
+      hang.style.transform = 'perspective(900px) rotateX(' + tilt.toFixed(2) + 'deg) rotate(' + swing.toFixed(2) + 'deg)';
+      sign.style.transform = 'translate3d(0,' + (-pass * vh * 0.95).toFixed(1) + 'px,0) scale(' + (1 + pass * 0.42).toFixed(3) + ')';
+      sign.style.opacity = (1 - band(p, 0.42, 0.52)).toFixed(3);
+      // the hill: a slow push in, and the afternoon goes to dusk
+      var push = 1.02 + p * 0.1;
+      day.style.transform = 'scale(' + push.toFixed(3) + ') translate3d(0,' + (-p * 1.5).toFixed(2) + '%,0)';
+      dusk.style.transform = 'scale(' + (push + 0.03).toFixed(3) + ') translate3d(0,' + (-p * 1.5).toFixed(2) + '%,0)';
+      var d = ease(band(p, 0.3, 0.68));
+      day.style.opacity = (1 - d).toFixed(3);
+      glow.style.opacity = ease(band(p, 0.5, 0.8)).toFixed(3);
+      var a = band(p, 0.06, 0.24);
+      copyA.style.opacity = (1 - a).toFixed(3);
+      copyA.style.transform = 'translate3d(0,' + (a * 30).toFixed(1) + 'px,0)';
+      copyA.inert = a > 0.9;
+      var b = ease(band(p, 0.62, 0.78));
+      copyB.style.opacity = b.toFixed(3);
+      copyB.style.transform = 'translate3d(0,' + ((1 - b) * 24).toFixed(1) + 'px,0)';
+
+      // the shed doors part as they come up the screen
+      var dr = doors.getBoundingClientRect();
+      var o = ease(band(vh - dr.top, vh * 0.2, vh * 0.2 + dr.height * 1.15));
+      leafL.style.transform = 'translate3d(' + (-o * 101).toFixed(2) + '%,0,0)';
+      leafR.style.transform = 'translate3d(' + (o * 101).toFixed(2) + '%,0,0)';
+    }
+
+    else { copyA.inert = false; }
+
+    // booking bar: shows once past the first screen, hides over the booking section
+    var br = book.getBoundingClientRect();
+    var onBook = br.top < vh && br.bottom > 0;
+    bar.classList.toggle('on', window.scrollY > vh * 0.6 && !onBook);
+  }
+  function req(){ if (!ticking){ ticking = true; requestAnimationFrame(frame); } }
+  window.addEventListener('scroll', req, {passive:true});
+  window.addEventListener('resize', req);
+  if (reduce.addEventListener) reduce.addEventListener('change', req);
+  frame();
+})();
+</script>
+</body>
+</html>
